@@ -1,0 +1,21 @@
+{
+  "title": "Исла Мона",
+  "requested_alias": "Исла-Моно",
+  "coordinates": {"latitude": "18°42′ с. ш.", "longitude": "72°09′ з. д.", "source": "Resource/INI/texts/russian/QuestBook/QuestBook_Part2.txt:3685", "note": "Квестовый журнал; не пересчёт позиции глобальной карты"},
+  "coast_source": "Resource/Models/Islands/IslaMona/IslaMona.gm",
+  "shore_source": "Resource/Models/Islands/IslaMona/IslaMona_locators.gm",
+  "shores": [
+    {"id": "Shore75", "name": "Бухта Губернатора", "x": 323.495, "z": 164.469, "reload": "reload_1"},
+    {"id": "Shore76", "name": "Мыс Утопленника", "x": 1255.541, "z": -44.396, "reload": "reload_2", "conditional": true},
+    {"id": "Shore77", "name": "Бухта Вьекес", "x": 792.049, "z": 1330.770, "reload": "reload_3"}
+  ],
+  "surface_edges": [["Shore75", "J1"], ["J1", "Town"], ["J1", "J2"], ["J2", "Shore77"], ["J2", "Factoria"], ["Shore76", "CaveEntrance"], ["CaveEntrance", "Cave"]],
+  "underground_edges": [["Cave", "Basement"], ["Basement", "Town"], ["Cave", "WaterCave"]],
+  "layout": {"note": "Внутренние точки и изгибы дорог условны; берег и морские точки взяты из модели. Север вверху соответствует +Z модели.", "J1": [630, 430], "J2": [620, 990], "Town": [1030, 650], "Factoria": [260, 1050], "CaveEntrance": [1120, -80], "Cave": [1000, 10]},
+  "routes": [
+    {"from": "Shore75", "to": "Town", "turns": ["налево"], "path": ["Shore75", "J1", "Town"]},
+    {"from": "Shore77", "to": "Town", "turns": ["налево", "направо"], "path": ["Shore77", "J2", "J1", "Town"]}
+  ],
+  "turn_basis": "Взаимное расположение выходов в GM: Jungle3 и Jungle13L для J1; Jungle5 для J2. Это геометрическая интерпретация развилки, не проверенное прохождение в игре.",
+  "quest_conditions": "Доступность мыса, фактории и отдельных переходов зависит от этапа квестов. Пещерный путь к посёлку проходит через подвал/дом, а не через лесную развилку."
+}
